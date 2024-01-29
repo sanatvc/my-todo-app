@@ -16,7 +16,8 @@ def add_todo():
 # Now, we render the items on the website in the order below
 st.title("My Todo App")
 st.subheader("This is my todo app")
-st.write("this app is to increase your productivity")
+st.write("This app is to increase your <b>productivity</b>",
+         unsafe_allow_html=True)        # allows html to be written (only works for .write)
 
 # checkboxes
 for index, todo_item in enumerate(todolist):
@@ -32,6 +33,7 @@ for index, todo_item in enumerate(todolist):
         st.experimental_rerun()          # refresh the page
 
 
+# Box to add a new to-do
 st.text_input(label="Enter a todo:",
               on_change=add_todo,
               key="new_todo")
